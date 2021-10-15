@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<h1>
+    <form name="logoutForm" th:action="@{/portfolioLogout}" th:hidden="true" method="post">
+        <input type="submit" value="Logout"/>
+    </form>
+    <a href="javascript: logoutForm.submit();">Hello ! Log Out</a>
+</h1>
+Hello world
+</body>
+</html>
