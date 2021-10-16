@@ -1,4 +1,4 @@
-package hnt.com;
+package hnt.com.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

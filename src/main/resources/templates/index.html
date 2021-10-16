@@ -2,15 +2,29 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/html">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="meta_csrf" th:content="${_csrf.token}"/>
+    <link rel="stylesheet" href="common.css">
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="hntUpload.js"></script>
     <title>Title</title>
 </head>
 <body>
-<h1>
+<h3>
     <form name="logoutForm" th:action="@{/portfolioLogout}" th:hidden="true" method="post">
         <input type="submit" value="Logout"/>
     </form>
-    <a href="javascript: logoutForm.submit();">Hello ! Log Out</a>
-</h1>
+    <a href="javascript: logoutForm.submit();"><label th:text="${user.name}"></label>, You can click here to Log Out</a>
+</h3>
 Hello world
+<br>
+Upload file here
+<input id="csv" type="file" />
+<div id="progress-wrp">
+    <div class="progress-bar"></div>
+    <div class="status">0%</div>
+</div>
+<br>
+<input type="button" id="clearPortfolio" value="Clear portfolio">
+<input type="button" id="updatePortfolio" value="Update portfolio">
 </body>
 </html>
