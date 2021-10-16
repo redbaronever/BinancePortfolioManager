@@ -1,4 +1,4 @@
-package hnt.com.Controller;
+package hnt.com.controller;
 
 import hnt.com.service.LogService;
 import hnt.com.service.helper.CSVHelper;
