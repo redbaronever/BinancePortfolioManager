@@ -77,14 +77,8 @@ Upload.prototype.clearPortfolio = function () {
     });
 };
 
-//Change id to your id
 $( document ).ready(function() {
     console.log( "ready!" );
-
-    $.ajaxSetup({
-        headers:
-            { 'X-CSRF-TOKEN': $('meta[name="meta_csrf"]').attr('content') }
-    });
 
     $("#clearPortfolio").on("click", function (e) {
         if (upload==null) {
@@ -92,6 +86,9 @@ $( document ).ready(function() {
             upload = new Upload(file);
         }
         upload.clearPortfolio();
+        if (portfolio) {
+            portfolio.clearRecords();
+        }
     });
 
     $("#updatePortfolio").on("click", function (e) {

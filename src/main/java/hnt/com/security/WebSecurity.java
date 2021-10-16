@@ -17,7 +17,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         http
                 .cors().and()
                 .authorizeRequests()
-                    .antMatchers("/index", "/", "/portfolio/update", "/portfolio/clear").hasRole("IN")
+                    .antMatchers("/index", "/", "/portfolio/**").hasRole("IN")
                     .antMatchers("doLogin").permitAll()
                 .and().formLogin().loginPage("/portfolioLogin")
                     .defaultSuccessUrl("/index")

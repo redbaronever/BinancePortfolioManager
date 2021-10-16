@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="common.css">
     <script src="jquery-3.6.0.min.js"></script>
     <script src="hntUpload.js"></script>
+    <script src="hntPortfolio.js"></script>
     <title>Title</title>
 </head>
 <body>
@@ -13,12 +14,13 @@
     <form name="logoutForm" th:action="@{/portfolioLogout}" th:hidden="true" method="post">
         <input type="submit" value="Logout"/>
     </form>
-    <a href="javascript: logoutForm.submit();"><label th:text="${user.name}"></label>, You can click here to Log Out</a>
+    <a href="javascript: logoutForm.submit();"><label th:text="${user.name}" id="userName"></label>, You can click here
+        to Log Out</a>
 </h3>
 Hello world
 <br>
 Upload file here
-<input id="csv" type="file" />
+<input id="csv" type="file"/>
 <div id="progress-wrp">
     <div class="progress-bar"></div>
     <div class="status">0%</div>
@@ -26,5 +28,21 @@ Upload file here
 <br>
 <input type="button" id="clearPortfolio" value="Clear portfolio">
 <input type="button" id="updatePortfolio" value="Update portfolio">
+
+<br>
+<br>
+<br>
+<table id="portfolio">
+    <thead>
+        <tr>
+            <th>Coin</th>
+            <th>Holding</th>
+            <th>Current Value</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
 </body>
 </html>

@@ -47,4 +47,9 @@ public class LogServiceImpl implements LogService {
     public void clear() {
         logRepository.clear(entityManager);
     }
+
+    @Override
+    public List<Log> getAllLogInfo() {
+        return logRepository.findAll();
+    }
 }
