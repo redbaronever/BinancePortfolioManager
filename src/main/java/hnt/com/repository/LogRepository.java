@@ -17,7 +17,7 @@ public interface LogRepository extends CrudRepository<Log, Long> {
         this.deleteAll();
 
         // 2. reset mysql sequence
-        String query = "ALTER TABLE log AUTO_INCREMENT = 1;";
+        String query = "ALTER SEQUENCE log_id_seq RESTART WITH 1;";
 
         javax.persistence.Query sqlQuery = entityManager.createNativeQuery(query);
         sqlQuery.executeUpdate();
